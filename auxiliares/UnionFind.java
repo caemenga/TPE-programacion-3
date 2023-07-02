@@ -1,12 +1,10 @@
-package tpe.estructurasAuxiliares;
+package tpe.auxiliares;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
-
-import tpe.Arco;
 
 public class UnionFind {
 	

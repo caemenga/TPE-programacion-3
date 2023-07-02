@@ -1,4 +1,4 @@
-package tpe;
+package tpe.primeraEntrega;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package tpe.estructurasAuxiliares;
+package tpe.auxiliares;
 
 public class Nodo<T> {
 	private T value;

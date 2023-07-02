@@ -1,10 +1,12 @@
-package tpe;
+package tpe.segundaEntrega;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import tpe.estructurasAuxiliares.Nodo;
-import tpe.estructurasAuxiliares.ServicioMergeSort;
-import tpe.estructurasAuxiliares.UnionFind;
+
+import tpe.auxiliares.Arco;
+import tpe.auxiliares.Nodo;
+import tpe.auxiliares.ServicioMergeSort;
+import tpe.auxiliares.UnionFind;
 
 public class ServicioGreedy {
 

@@ -1,4 +1,4 @@
-package tpe;
+package tpe.auxiliares;
 
 public class Arco<T> {
 
@@ -12,6 +12,12 @@ public class Arco<T> {
 		this.etiqueta = etiqueta;
 	}
 	
+	public Arco(int origen, int destino) {
+		this.verticeOrigen = origen;
+		this.verticeDestino = destino;
+		this.etiqueta = null;
+	}
+
 	public int getVerticeOrigen() {
 		return verticeOrigen;
 	}

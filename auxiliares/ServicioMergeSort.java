@@ -1,9 +1,7 @@
-package tpe.estructurasAuxiliares;
+package tpe.auxiliares;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import tpe.Arco;
 
 public class ServicioMergeSort {
   private List<Arco> elementos;

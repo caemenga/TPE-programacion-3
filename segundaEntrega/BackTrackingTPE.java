@@ -1,8 +1,10 @@
-package tpe;
+package tpe.segundaEntrega;
 
 
 import java.util.ArrayList;
 import java.util.Stack;
+
+import tpe.auxiliares.Arco;
 
 public class BackTrackingTPE {
 	private Stack<Arco> listaTuneles;
@@ -10,7 +12,7 @@ public class BackTrackingTPE {
 	private int metrica;
 	private int distancia;
 
-	public BackTrackingTPE(ArrayList<Arco> tuneles, ArrayList<Integer> estaciones) {
+	public BackTrackingTPE(ArrayList<Integer> estaciones, ArrayList<Arco> tuneles) {
 		this.listaTuneles = new Stack<Arco>();
 		this.estaciones = new ArrayList<>(estaciones);
 		this.metrica = 0;
