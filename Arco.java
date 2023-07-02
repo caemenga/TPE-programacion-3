@@ -2,8 +2,8 @@ package tpe;
 
 public class Arco<T> {
 
-	private int verticeOrigen;
-	private int verticeDestino;
+	private Integer verticeOrigen;
+	private Integer verticeDestino;
 	private T etiqueta;
 
 	public Arco(int verticeOrigen, int verticeDestino, T etiqueta) {
@@ -23,5 +23,15 @@ public class Arco<T> {
 	public T getEtiqueta() {
 		return etiqueta;
 	}
-
+	@Override
+	public boolean equals(Object o) {
+		Arco<T> arco= (Arco<T>) o;
+		return ((arco.getVerticeOrigen()== this.verticeOrigen)&&(arco.getVerticeDestino()== this.verticeDestino));
+	}
+	@Override
+	public String toString() {
+		
+		
+		return "E"+this.getVerticeOrigen() +" - E"+ this.getVerticeDestino();
+	}
 }
