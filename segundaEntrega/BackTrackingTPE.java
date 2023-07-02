@@ -42,7 +42,6 @@ public class BackTrackingTPE {
 	 * de recursiones que debera realizar el metodo para encontrar la solucion.
 	 */
 	public void solucionBacktracking() {
-		this.metrica++;
 		int distanciaAux = 0;
 		ArrayList<Arco> solucion = new ArrayList<Arco>();
 		ArrayList<Arco> caminoActual = new ArrayList<Arco>();
@@ -60,7 +59,7 @@ public class BackTrackingTPE {
 	 */
 
 	private void getTuneles(ArrayList<Arco> solucion, ArrayList<Arco> caminoActual, int distanciaAux) {
-
+		System.out.println(metrica);
 		this.metrica++;
 		if (listaTuneles.isEmpty()) {
 			if (solucionFactible(solucion, caminoActual)) {
@@ -72,16 +71,17 @@ public class BackTrackingTPE {
 		} else {
 
 			Arco tunel = listaTuneles.pop();
-			getTuneles(solucion, caminoActual, distanciaAux);
-
-			caminoActual.add(tunel);
-			distanciaAux += (int) tunel.getEtiqueta();
 
 			getTuneles(solucion, caminoActual, distanciaAux);
-			caminoActual.remove(tunel);
-			distanciaAux -= (int) tunel.getEtiqueta();
+			if ((distanciaAux + (int) tunel.getEtiqueta()) < (getDistancia(solucion))||(solucion.isEmpty())) {
+				caminoActual.add(tunel);
+				distanciaAux += (int) tunel.getEtiqueta();
+
+				getTuneles(solucion, caminoActual, distanciaAux);
+				caminoActual.remove(tunel);
+				distanciaAux -= (int) tunel.getEtiqueta();
+			}
 			listaTuneles.push(tunel);
-
 		}
 	}
 
