@@ -18,6 +18,10 @@ public class ServicioDFS {
 		this.visitados = new ArrayList<Integer>();
 	}
 
+	/**
+	 * Complejidad: O(n!) donde n! es la cantidad de recurciones 
+	 * que hace el metodo dfs_visit(v) para obtener la solucion
+	 */
 	public List<Integer> dfsForest() {
 		Iterator<Integer> vertices = grafo.obtenerVertices();
 
@@ -34,8 +38,12 @@ public class ServicioDFS {
 		visitados.clear();
 		return dfsForest;
 	}
+	
+	/**
+	 * Complejidad: O(n!) donde n! es la cantidad de recurciones 
+	 * que hace el metodo.
+	 */
 
-	// tocamos hasta aca
 	public void dfs_Visit(int v) {
 
 		this.visitados.add(v);
@@ -49,4 +57,4 @@ public class ServicioDFS {
 
 	}
 
-	}
+}

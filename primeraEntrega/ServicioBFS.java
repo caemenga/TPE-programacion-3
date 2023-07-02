@@ -16,6 +16,12 @@ public class ServicioBFS {
 		this.visitados = new ArrayList<Integer>();
 	}
 	
+	/**
+	 * Complejidad: O(n^3) donde n^3 son las 3 iteraciones 
+	 * de las colecciones con n elementos 
+	 * que realiza el metodo para obtener el resultado
+	 */
+	
 	public List<Integer> bfsForest() {
 		Queue<Integer> cola = new LinkedList<Integer>();
 		Iterator<Integer> vertices = grafo.obtenerVertices();
@@ -31,7 +37,7 @@ public class ServicioBFS {
 				while(!cola.isEmpty()) {
 					Integer v1 = cola.poll();
 					
-					Iterator<Integer> adyacentes = grafo.obtenerAdyacentes(v);
+					Iterator<Integer> adyacentes = grafo.obtenerAdyacentes(v1);
 					while(adyacentes.hasNext()) {
 						Integer adyacente = adyacentes.next();
 						if(!this.visitados.contains(adyacente)) {

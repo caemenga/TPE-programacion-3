@@ -30,11 +30,15 @@ public class ServicioGreedy {
 		this.distanciaTotal = 0;
 		this.metrica = 0;
 	}
-
+	
+	/**
+	 * Complejidad: O(n^3) donde n es la cantidad de tuneles y
+	 * las 2 listas de nodos que recorre en el Servicio UnionFind.
+	 */
+	
 	public void servicioGreedy() {
 
 		ArrayList<Arco> candidatos = new ArrayList<>(this.tuneles);
-		int indxCandidatos = 0;
 		ServicioMergeSort servicioMerge = new ServicioMergeSort(candidatos);
 		UnionFind servicioUnion = new UnionFind(estaciones);
 		servicioMerge.sort(); // se ordena la lista de candidatos de menor a mayor sengun la distancia.

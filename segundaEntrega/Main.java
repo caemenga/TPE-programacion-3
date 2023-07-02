@@ -30,7 +30,7 @@ public class Main {
 		
 		System.out.println("Dataset2");
 		String path2 = "../programacion-3/src/tpe/datasets/dataset2.txt";
-		CSVReader reader2 = new CSVReader(path);
+		CSVReader reader2 = new CSVReader(path2);
 		reader2.read();
 		
 		ArrayList<Arco> distancias2 = reader2.getDistacias();
@@ -46,7 +46,7 @@ public class Main {
 		
 		System.out.println("Dataset3");
 		String path3 = "../programacion-3/src/tpe/datasets/dataset3.txt";
-		CSVReader reader3 = new CSVReader(path);
+		CSVReader reader3 = new CSVReader(path3);
 		reader3.read();
 		
 		ArrayList<Arco> distancias3 = reader3.getDistacias();

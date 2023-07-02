@@ -22,7 +22,11 @@ public class ServicioCaminos {
 		this.lim = lim;
 		this.contArcos = 0;
 	}
-
+	
+	/**
+	 * Complejidad: O(n!) n! es la cantidad de recursiones que tiene que hacer
+	 * el metodo obtenerCaminos para obtener la solucion.
+	 */
 	public List<List<Integer>> caminos() {
 		List<List<Integer>> caminos = new ArrayList<List<Integer>>();
 		ArrayList<Integer> caminoActual = new ArrayList<Integer>();
@@ -32,34 +36,36 @@ public class ServicioCaminos {
 
 		return new ArrayList<>(caminos);
 	}
+	
+	/**
+	 * Complejidad: O(n!) n! es la cantidad de recursiones que tiene que hacer
+	 * el metodo  para obtener la solucion.
+	 */
+	
 
 	private <T> void obtenerCaminos(int vertice, ArrayList<Integer> caminoActual, List<List<Integer>> caminos,
 			ArrayList<Arco> arcosVisitados) {
 
 		caminoActual.add(vertice);
-		if ((vertice == destino) && (contArcos <= lim))
-			caminos.add(new ArrayList<Integer>(caminoActual));
+		if ((vertice == destino) && (contArcos <= lim)) {
+				caminos.add(new ArrayList<Integer>(caminoActual));
+		} else if (contArcos < lim) {
 
-		if (contArcos >= lim) {
-			caminoActual.remove(caminoActual.size() - 1);
-			return;
-		}
+			Iterator<?> arcos = grafo.obtenerArcos(vertice);
+			while (arcos.hasNext()) {
+				Arco<T> arco = (Arco<T>) arcos.next();
 
-		Iterator<?> arcos = grafo.obtenerArcos(vertice);
-		while (arcos.hasNext()) {
-			Arco<T> arco = (Arco<T>) arcos.next();
-
-			if (!arcosVisitados.contains(arco)) {
-				Integer adyacente = arco.getVerticeDestino();
-				arcosVisitados.add(arco);
-				contArcos++;
-				obtenerCaminos(adyacente, caminoActual, caminos, arcosVisitados);
-				arcosVisitados.remove(arco);
-				contArcos--;
+				if (!arcosVisitados.contains(arco)) {
+					Integer adyacente = arco.getVerticeDestino();
+					arcosVisitados.add(arco);
+					contArcos++;
+					obtenerCaminos(adyacente, caminoActual, caminos, arcosVisitados);
+					arcosVisitados.remove(arco);
+					contArcos--;
+				}
+				
 			}
-
 		}
-
 		caminoActual.remove(caminoActual.size() - 1);
 	}
 }
